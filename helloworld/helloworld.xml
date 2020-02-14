@@ -1,0 +1,23 @@
+<domain type='lxc'>
+    <name>helloworld</name>
+    <memory>102400</memory>
+    <os>
+        <type arch='x86_64'>exe</type>
+        <init>/bin/sh</init>
+    </os>
+    <devices>
+        <console type='pty'/>
+        <filesystem type='mount'>
+            <source dir='/home/user/libvirt/helloworld/mnt/config'/>
+            <target dir='/etc/httpd'/>
+        </filesystem>
+        <filesystem type='mount'>
+            <source dir='/home/user/libvirt/helloworld/mnt/data'/>
+            <target dir='/var/www'/>
+        </filesystem>
+        <interface type='network'>
+            <mac address='52:54:00:4d:2b:cd'/>
+            <source network='default'/>
+        </interface>
+    </devices>
+</domain>
